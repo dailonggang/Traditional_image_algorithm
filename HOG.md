@@ -40,13 +40,13 @@ HOG（Histogram of Oriented Gradient，即方向梯度直方图）是应用在�
 #### 1.梯度计算
 
 计算图像上每个像素点的梯度大小和方向：
-$$
+$
 水平方向梯度：\quad G_{x}(x,y) = I(x+1,y)-I(x-1,y)\\
 垂直方向梯度：\quad G_{y}(x,y) = I(x,y+1)-I(x,y-1)\\
 每个像素点在(x,y)处的梯度幅值和方向分别为：\qquad \\
 幅值： G(x,y) = \sqrt {G_{x}(x,y)^{2}+G_{y}(x,y)^2}\\
 方向： \alpha = arctan\frac{G_{y}(x,y)}{G_{x}(x,y)} \qquad \qquad \qquad
-$$
+$
 
 #### 2.计算梯度方向直方图（计算过程不明白）
 
