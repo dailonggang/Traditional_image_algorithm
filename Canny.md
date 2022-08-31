@@ -17,10 +17,12 @@ Canny 边缘检测分为如下几个步骤：
 2. 计算梯度
 梯度的方向与边缘的方向是垂直的。
 边缘检测算子返回水平方向的Gx和垂直方向的Gy。梯度的幅度𝐺和方向𝛩（用角度值表示）为：
+\begin{equation}
 \begin{gathered}
 G=\sqrt{G_x^2+G_y^2} \\
 \Theta=\operatorname{atan} 2\left(G_y, G_x\right)
 \end{gathered}
+\end{equation}
 式中，atan2(•)表示具有两个参数的 arctan 函数。
 梯度的方向总是与边缘垂直的，通常就近取值为水平（左、右）、垂直（上、下）、对角线（右上、左上、左下、右下）等 8 个不同的方向。
 因此，在计算梯度时，我们会得到梯度的幅度和角度（代表梯度的方向）两个值。
