@@ -23,12 +23,8 @@ Canny 边缘检测分为如下几个步骤：
 
 梯度的方向与边缘的方向是垂直的。
 边缘检测算子返回水平方向的Gx和垂直方向的Gy。梯度的幅度𝐺和方向𝛩（用角度值表示）为：
-$
-G=\sqrt{G_x^2+G_y^2}
-$
-$
-\Theta=\operatorname{atan} 2\left(G_y, G_x\right)
-$
+$G=\sqrt{G_x^2+G_y^2}$
+$\Theta=\operatorname{atan} 2\left(G_y, G_x\right)$
 式中，atan2(•)表示具有两个参数的 arctan 函数。
 梯度的方向总是与边缘垂直的，通常就近取值为水平（左、右）、垂直（上、下）、对角线（右上、左上、左下、右下）等 8 个不同的方向。
 因此，在计算梯度时，我们会得到梯度的幅度和角度（代表梯度的方向）两个值。
@@ -64,9 +60,15 @@ OpenCV 提供了函数 cv2.Canny()来实现 Canny 边缘检测，其语法形式
 
 edges = cv.Canny( image, threshold1, threshold2[, apertureSize[, L2gradient]])
 其中：
+
 edges 为计算得到的边缘图像。
+
 image 为 8 位输入图像。
+
 threshold1 表示处理过程中的第一个阈值。
+
 threshold2 表示处理过程中的第二个阈值。
+
 apertureSize 表示 Sobel 算子的孔径大小。
+
 L2gradient 为计算图像梯度幅度（gradient magnitude）的标识。其默认值为 False。如果为 True，则使用更精确的 L2 范数进行计算（即两个方向的导数的平方和再开方），否则使用 L1 范数（直接将两个方向导数的绝对值相加）。
